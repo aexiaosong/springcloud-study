@@ -1,0 +1,27 @@
+server:
+  port: 8761
+eureka:
+  server:
+    enable-self-preservation: true   # 开启自我保护机制
+  instance:
+    hostname: localhost
+  client:
+    # 当前的Eureka服务是单机版的
+    #    registerWithEureka: true
+    #    fetchRegistry: true
+    # 下面配置的Eureka是高可用模式
+    registerWithEureka: true  # 注册到Eureka上
+    fetchRegistry: true       # 从Eureka上拉取信息
+    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # 单机
+      defaultZone: http://root:root@localhost:8762/eureka/
+
+# 指定spring-security的用户名和密码
+spring:
+  security:
+    user:
+      name: root
+      password: root
+  application:
+    name: EUREKA01
+

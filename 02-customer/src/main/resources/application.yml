@@ -1,0 +1,17 @@
+# 指定Eureka服务地址
+eureka:
+  instance:
+    # 配置心跳
+    lease-renewal-interval-in-seconds: 30     # 心跳的间隔
+    lease-expiration-duration-in-seconds: 90  # 多久没发生，就认为你宕机了
+  client:
+    service-url:
+      defaultZone: http://root:root@localhost:8761/eureka,http://root:root@localhost:8762/eureka
+    registry-fetch-interval-seconds: 30  # 每隔多久去更新一下本地的注册表信息
+
+# 指定服务名称
+spring:
+  application:
+    name: CUSTOMER
+
+
