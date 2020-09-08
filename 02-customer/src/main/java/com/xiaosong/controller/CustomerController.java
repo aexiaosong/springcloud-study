@@ -18,14 +18,15 @@ public class CustomerController {
 
     @GetMapping("/customer")
     public String customer() {
-        // 1.通过eurekaClient获取到SEARCH服务信息，第二个参数表示是否是以https的方式访问
-        InstanceInfo info = eurekaClient.getNextServerFromEureka("SEARCH", false);
-        // 2.获取到访问地址（拿到的是ip加端口）http://localhost:8081
-        String url = info.getHomePageUrl();
-        System.out.println(url);
-        // 3.通过restTemplate访问
-        String result = restTemplate.getForObject(url + "/search", String.class);
-        // 4.返回
-        return result;
+//        // 1.通过eurekaClient获取到SEARCH服务信息，第二个参数表示是否是以https的方式访问
+//        InstanceInfo info = eurekaClient.getNextServerFromEureka("SEARCH", false);
+//        // 2.获取到访问地址（拿到的是ip加端口）http://localhost:8081
+//        String url = info.getHomePageUrl();
+//        System.out.println(url);
+//        // 3.通过restTemplate访问
+//        String result = restTemplate.getForObject(url + "/search", String.class);
+//        // 4.返回
+//        return result;
+        return restTemplate.getForObject("http://SEARCH/search", String.class);
     }
 }

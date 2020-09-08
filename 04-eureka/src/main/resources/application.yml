@@ -5,8 +5,8 @@ eureka:
     hostname: localhost
   client:
     # 当前的Eureka服务是单机版的
-#    registerWithEureka: true
-#    fetchRegistry: true
+#    registerWithEureka: false
+#    fetchRegistry: false
     # 下面配置的Eureka是高可用模式
     registerWithEureka: true  # 注册到Eureka上
     fetchRegistry: true       # 从Eureka上拉取信息
