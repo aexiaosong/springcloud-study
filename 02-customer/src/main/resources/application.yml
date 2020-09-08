@@ -15,6 +15,11 @@ SEARCH:        # 编写服务名称
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule  # 具体负载均衡使用的类
 
+# feign和hystrix组件整合
+feign:
+  hystrix:
+    enabled: true
+
 # 指定服务名称
 spring:
   application:
